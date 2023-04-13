@@ -34,11 +34,12 @@ export class PlanilhaComponent implements OnInit {
 
     //TITULO img
     doc.addImage("assets/Logo.png", "PNG", 420, 2, 290, 80);
-
+    doc.line(65,1000,65,10);
     //CONTEÚDO 1ª TABELA:
     //NOME FANTASIA
     doc.addFileToVFS("Nunito.ttf", Nunito);
     doc.addFont("Nunito.ttf", "Nunito", "Normal");
+
     autoTable(doc, {
       body: [
         [ 
@@ -46,6 +47,7 @@ export class PlanilhaComponent implements OnInit {
           {content: 'ENERGIN TECNOLOGIA E INOVAÇÃO DA AMAZÔNIA', styles: {fontSize: 9, fontStyle: 'normal', textColor: [0,0,0], lineColor: false, lineWidth:{right: 1, top: 1, left:0, bottom:1}}}, 
         ]
       ],
+      //tableWidth: 1010,
       startY: 115, //+25
       theme: 'grid',
     })
@@ -143,48 +145,47 @@ export class PlanilhaComponent implements OnInit {
     autoTable(doc, {
      head: [
       [
-        {content: 'ID', styles: {fontSize: 9, fontStyle: 'italic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 55, lineWidth:{right: 0, top: 0, left: 1, bottom:0}}}, 
-        {content: 'ESCOLA', styles: {fontSize: 9, fontStyle: 'italic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 480, lineWidth:{right: 0, top: 0, left: 0, bottom:0}}}, 
-        {content: 'OS', styles: {fontSize: 9, fontStyle: 'italic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 30, lineWidth:{right: 0, top: 0, left: 0, bottom:0}}}, 
-        {content: 'DATA DE EXECUÇÃO', styles: {fontSize: 9, fontStyle: 'italic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF',  cellWidth: 180, lineWidth:{right: 0, top: 0, left: 0, bottom:0}}}, 
-        {content: 'VALOR', styles: {fontSize: 9, fontStyle: 'italic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', lineWidth:{right: 1, top: 0, left: 0, bottom:0}}}, 
+        {content: 'ID', styles: {fontSize: 9, fontStyle: 'bolditalic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 55, lineWidth:{right: 0, top: 0, left: 1, bottom:0}}}, 
+        {content: 'ESCOLA', styles: {fontSize: 9, fontStyle: 'bolditalic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 370, lineWidth:{right: 0, top: 0, left: 0, bottom:0}}}, 
+        {content: 'OS', styles: {fontSize: 9, fontStyle: 'bolditalic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 30, lineWidth:{right: 0, top: 0, left: 0, bottom:0}}}, 
+        {content: 'DATA DE EXECUÇÃO', colSpan: 2, styles: {fontSize: 9, fontStyle: 'bolditalic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF',  cellWidth: 50, lineWidth:{right: 0, top: 0, left: 0, bottom:0}}}, 
+        {content: 'VALOR', colSpan:2 ,styles: {fontSize: 9, fontStyle: 'bolditalic', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#BFBFBF', cellWidth: 70,lineWidth:{right: 1, top: 0, left: 0, bottom:0}}}, 
       ]
+     ],
+     body: [
+       [ 
+         {content: '1', styles: {fontSize: 10, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', cellWidth: 55, textColor: [0,0,0], fillColor: '#FFFFFF',lineWidth:{right: 0, top: 0, left:1, bottom:1}}}, 
+         {content: 'Escola Estadual Senador Alvaro Maia - Subestação Aérea de 75 kVA ', styles: {fontSize: 7.5, fontStyle: 'normal', textColor: [0,0,0], fillColor: '#FFFFFF',lineColor: false, valign: 'middle', cellWidth: 465, halign: 'left',  lineWidth:{right: 0, top: 0, left: 0, bottom:1}}}, 
+         {content: '024/2023', styles: {fontSize: 7, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#FFFFFF', lineWidth:{right: 0, top: 0, left: 0, bottom:1}, cellWidth: 65}}, 
+         {content: '7-fev-23', styles: {fontSize: 7, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#FFFFFF', lineWidth:{right: 0, top: 0, left: 0, bottom:1}, cellWidth: 65}}, 
+         {content: '7-mar-23', styles: {fontSize: 7, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#FFFFFF', lineWidth:{right: 0, top: 0, left: 0, bottom:1}, cellWidth: 77}}, 
+         {content: 'R$ 44.878,80 ', styles: {fontSize: 8, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], fillColor: '#FFFFFF', lineWidth:{right: 0, top: 0, left: 0, bottom:1}, cellWidth: 100}}, 
+         {content: 'quarenta e quatro mil, oitocentos e setenta e oito reais e oitenta centavos', styles: {fontSize: 6.5, fontStyle: 'normal', textColor: [0,0,0], fillColor: '#FFFFFF', lineColor: false, valign: 'middle', halign: 'center', cellWidth: 70, lineWidth:{right: 1, top: 0, left: 0, bottom:1}}},   
+       ]
+     ],
+    foot: [
+       [ 
+         {content: '', styles:{fillColor: '#FFFFFF', lineWidth:{right: 0, top: 0, left:1, bottom:1}, lineColor: false}},
+         {content: 'TOTAL', styles: {fontSize: 12, fontStyle: 'bold', textColor: [0,0,0], fillColor: '#FFFFFF', lineColor: false, lineWidth:{right: 0, top: 0, left:0, bottom:1}, valign: 'middle', halign: 'center', cellWidth: 170}}, 
+         {content: '', styles:{fillColor: '#FFFFFF', lineColor: false, lineWidth:{right: 0, top: 0, left:0, bottom:1}}},
+         {content: '', styles:{fillColor: '#FFFFFF', lineColor: false, lineWidth:{right: 0, top: 0, left:0, bottom:1}}},
+         {content: 'R$ ',styles: {fontSize: 12, fontStyle: 'bold', textColor: [0,0,0], fillColor: '#FFFFFF', lineColor: false, lineWidth:{right: 0, top: 0, left:1, bottom:1}, valign: 'middle', halign: 'center'}},
+         {content: '242.917,79',styles: {fontSize: 12, fontStyle: 'bold', textColor: [0,0,0], lineColor: false, fillColor: '#FFFFFF', lineWidth:{right: 1, top: 0, left:0, bottom:1}, valign: 'middle', halign: 'center'}}, 
+         {content: 'duzentos e quarenta e dois mil, novecentos e dezessete reais e setenta e nove centavos', 
+         styles: {fontSize: 8, fontStyle: 'bold', textColor: [0,0,0], fillColor: '#FFFFFF', lineColor: false,  halign: 'center', lineWidth:{right: 1, top: 0, left:1, bottom:1}, cellWidth: 189}}, 
+       ]
      ],
 
      startY: 320,
      theme: 'grid',
    })
 
-    //DADOS DA ESCOLA E OS
-    autoTable(doc, {
-      body: [
-        [ 
-          {content: '1', styles: {fontSize: 10, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', cellWidth: 55, textColor: [0,0,0], lineWidth:{right: 0, top: 1, left:1, bottom:1}}}, 
-          {content: 'Escola Estadual Senador Alvaro Maia - Subestação Aérea de 75 kVA ', styles: {fontSize: 7.5, fontStyle: 'normal', textColor: [0,0,0], lineColor: false, valign: 'middle', cellWidth: 465, halign: 'left',  lineWidth:{right: 0, top: 1, left: 0, bottom:1}}}, 
-          {content: '024/2023', styles: {fontSize: 7, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], lineWidth:{right: 0, top: 1, left: 0, bottom:1}, cellWidth: 65}}, 
-          {content: '7-fev-23', styles: {fontSize: 7, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], lineWidth:{right: 0, top: 1, left: 0, bottom:1}, cellWidth: 65}}, 
-          {content: '7-mar-23', styles: {fontSize: 7, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], lineWidth:{right: 0, top: 1, left: 0, bottom:1}, cellWidth: 77}}, 
-          {content: 'R$ 44.878,80 ', styles: {fontSize: 8, fontStyle: 'normal', lineColor: false, valign: 'middle', halign: 'center', textColor: [0,0,0], lineWidth:{right: 0, top: 1, left: 0, bottom:1}, cellWidth: 100}}, 
-          {content: 'quarenta e quatro mil, oitocentos e setenta e oito reais e oitenta centavos', styles: {fontSize: 6.5, fontStyle: 'italic', textColor: [0,0,0], lineColor: false, valign: 'middle', halign: 'center', lineWidth:{right: 1, top: 1, left: 0, bottom:1}}},   
-        ]
-      ],
-      startY: 345,
-      theme: 'grid',
-    })
 
     //TOTAL
-    autoTable(doc, {
-      body: [
-        [ 
-          {content: 'TOTAL', styles: {fontSize: 12, fontStyle: 'bold', textColor: [0,0,0], lineColor: false, lineWidth:{right: 0, top: 1, left:1, bottom:1}, valign: 'middle', halign: 'center', cellWidth: 640}}, 
-          {content: 'R$ 242.917,79', styles: {fontSize: 12, fontStyle: 'bold', textColor: [0,0,0], lineColor: false, lineWidth:{right: 1, top: 1, left:1, bottom:1}, valign: 'middle', halign: 'center'}}, 
-          {content: 'duzentos e quarenta e dois mil, novecentos e dezessete reais e setenta e nove centavos', 
-          styles: {fontSize: 8, fontStyle: 'bold', textColor: [0,0,0], lineColor: false,  halign: 'center', lineWidth:{right: 1, top: 1, left:1, bottom:1}, cellWidth: 200}}, 
-        ]
-      ],
+/*    autoTable(doc, {
       startY: 390,
       theme: 'grid',
-    })
+    })*/
 
     doc.addImage('assets/assinatura.png', 'PNG', 280,525,680,170);
     //FOOTER
@@ -201,7 +202,13 @@ export class PlanilhaComponent implements OnInit {
     //doc.save("Cronograma-de-Execução.pdf");
     window.open(doc.output('bloburl'))
     console.log('clicado');
-      
+    
+    doc.html(document.body, {
+      callback: function (doc) {
+      },
+      x: 1000,
+      y: 10
+   });
   }
 
 }
