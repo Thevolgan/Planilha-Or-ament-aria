@@ -34,7 +34,6 @@ export class PlanilhaComponent implements OnInit {
 
     //TITULO img
     doc.addImage("assets/Logo.png", "PNG", 420, 2, 290, 80);
-    doc.line(65,1000,65,10);
     //CONTEÚDO 1ª TABELA:
     //NOME FANTASIA
     doc.addFileToVFS("Nunito.ttf", Nunito);
