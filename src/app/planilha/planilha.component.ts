@@ -30,10 +30,10 @@ export class PlanilhaComponent implements OnInit {
 
     //LOGO img
     // (dist horizontal LEFT, dist vertical TOP, width, height)
-    doc.addImage("assets/Logo2.png", "PNG", 65, 9, 80,80);  
+    doc.addImage("assets/logo3.png", "PNG", 65, 9, 80,80);  
 
     //TITULO img
-    doc.addImage("assets/Logo.png", "PNG", 420, 2, 290, 80);
+    doc.addImage("assets/logo5.png", "PNG", 320, 10, 470, 80);
     //CONTEÚDO 1ª TABELA:
     //NOME FANTASIA
     doc.addFileToVFS("Nunito.ttf", Nunito);
@@ -177,6 +177,7 @@ export class PlanilhaComponent implements OnInit {
 
      startY: 320,
      theme: 'grid',
+     
    })
 
 
